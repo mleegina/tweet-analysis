@@ -1,0 +1,25 @@
+{
+  "name": "lab7",
+  "version": "1.0.0",
+  "description": "Twitter scraping bot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "Gina Lee",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chart.js": "^2.7.1",
+    "express": "^3.4.4",
+    "js2xmlparser": "^3.0.0",
+    "json2csv": "^3.7.3",
+    "jsonexport": "^2.0.11",
+    "mongodb": "^2.2.25",
+    "twit": "^2.2.5"
+  }
+}

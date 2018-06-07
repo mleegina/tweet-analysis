@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twitterbot">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap, Ajax, jQuery, Angular, Angular-route, Google Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards|Open+Sans" rel="stylesheet">
+
+  <script type="text/javascript" src="js/ticker.js"></script>
+  <script type="text/javascript" src="js/tags.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body class="view" ng-controller="mainController">
+
+  <div class="container">
+
+    <div class="header">
+
+      <div class="row">
+        <h1>tweet tweet.</h1></br>
+        <i><p>Search some tweets, visualize them and then download the data.</p></i>
+        </div>
+
+        <!-- Gives user feedback -->
+        <div class="row">
+          <p id="note"></p>
+        </div>
+
+        <!-- Enter Keyword, Quantity, & Load-->
+        <form method="post" action="/load" target=''>
+          <div class="row table">
+            <div class="col-sm">
+              <h2>Step 1</h2>
+            </div>
+            <div class="col-sm">
+              <label for="exampleFormControlInput1">Keyword</label>
+              <input type="text" class="form-control" name="keyword" ng-model="keyword" id="keyword">
+            </div>
+            <div class="col-sm">
+              <label for="exampleFormControlInput1">Quantity</label>
+              <input type="number" class="form-control" name="quantity" ng-model="quantity" id="quantity">
+            </div>
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary" ng-click="load()">Load</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Choose a Type, Export, & Reset -->
+        <form method="post" action="/export" target=''>
+          <div class="row table">
+            <div class="col-sm">
+              <h2>Step 2</h2>
+            </div>
+            <div class="col-sm">
+              <label for="fileName">File Name</label>
+              <input type="text" class="form-control" name="filename" ng-model="filename" id="filename">
+            </div>
+            <div class="col-sm">
+              <label for="exporting">File Type</label>
+              <select class="form-control" name="type">
+                <option>CSV</option>
+                <option>JSON</option>
+                <option>XML</option>
+              </select>
+            </div>
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary " ng-click="export()">Export</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Display, Visualize, or Reset buttons -->
+        <div class="row table">
+          <div class="col-sm">
+            <h2>Step 3</h2>
+          </div>
+          <div class="col-sm">
+            <button type="submit" class="btn btn-primary" ng-click="display()">Display</button>
+          </div>
+          <div class="col-sm">
+            <input class="btn btn-primary" type="button" value="Visualize" onClick="location.href='graphs.html'"></input>
+          </div>
+          <div class="col-sm">
+            <input class="btn btn-primary" type="button" value="Reset" onClick="window.location.reload()"></input>
+          </div>
+        </div>
+
+      </div>
+
+    <!-- Tweets are appended here -->
+    <div class="row">
+      <div class = "col-8">
+        <h2>Tweets:</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <div class = "profile">
+          <ul id= "profile">
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class = "ticker">
+          <ul id= "ticker">
+            <div id="user-img">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>

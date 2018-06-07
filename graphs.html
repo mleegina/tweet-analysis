@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap, Ajax, jQuery, Angular, Angular-route, Google Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Mrs+Sheppards|Open+Sans" rel="stylesheet">
+
+  <script type="text/javascript" src="js/ticker.js"></script>
+  <script type="text/javascript" src="js/tags.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body class="view">
+
+  <div class="container">
+
+    <div class="row">
+      <div class = "col-10">
+        <h1>Visualizations:</h1>
+      </div>
+      <div class = "col-2">
+        <button class="btn btn-primary" id="reset"  type="submit" onclick="location.href='index.html'">Start Over</button>
+      </div>
+    </div>
+
+    <!-- graph 1: -->
+    <div class="row">
+      <div class="graph">
+
+        <h3>Follower vs. Following by User</h3>
+        <p class="info">This graph shows the number of people a user is</br>
+          following on the x-axis, and the number of followers on the y-axis.</p>
+          <canvas id="chart1" width="400" height="400" ></canvas>
+
+        </div>
+      </div>
+
+      <!-- graph 2: -->
+      <div class="row">
+        <div class="graph">
+
+          <h3>Number of Tweets by User</h3>
+          <p class="info">This shows the portion of how many tweets a user had </br>
+            tweeted relative to all of the tweets of the other users in this dataset.</p>
+            <canvas id="chart2" width="400" height="400"></canvas>
+
+          </div>
+        </div>
+
+        <!-- graph 3: -->
+        <div class="row">
+          <div class="graph">
+
+            <h3>Year Joined vs. Number of Tweets with Ratio as Bubble Size</h3>
+            <p class="info">Each point is a user, and the size of the point is calculated by dividing </br> the number of follwers by the number of users that they are following.</p>
+            <canvas id="chart3" width="400" height="400"></canvas>
+
+          </div>
+        </div>
+        
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+      <script src='Chart.min.js'></script>
+      <script src="chart.js"></script>
+    </body>
+    </html>
