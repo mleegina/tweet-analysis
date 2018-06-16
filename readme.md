@@ -1,6 +1,8 @@
+
 To run:
 
 1. Set up config.js file
+    - Current config will not work as keys have been regenerated!
     - Add api key & secret to config/config.js file
 
 2. Start Mongo on separate terminal window
