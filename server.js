@@ -1,5 +1,5 @@
 // Contains Twitter access tokens
-var config = require('./config');
+var config = require('./config/config');
 
 var express = require('express');
 var http = require('http');
@@ -30,10 +30,10 @@ app.use(express.static(__dirname + '/public'));
 app.use('/static', express.static('public'));
 
 app.get("/", function (req,res){
-  res.sendfile('./index.html');
+  res.sendfile('./public/index.html');
 });
 
-MongoClient.connect('mongodb://127.0.0.1:27017/lab7', function(err, db) {
+MongoClient.connect('mongodb://127.0.0.1:27017/twitter', function(err, db) {
   if (err) throw err;
   console.log("Database connection established");
 
@@ -44,7 +44,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017/lab7', function(err, db) {
     console.log(collection);
   });
 
-  // newly added line
   db.collection('twitCollection').remove();
   var num;
 
@@ -62,7 +61,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/lab7', function(err, db) {
     T.get('search/tweets', params, gotData);
 
     function gotData(err, data) {
-      var path = 'leeg8-tweets.json'
+      var path = './public/files/tweets.json'
 
       fs.writeFile(path, JSON.stringify(data), function(err){
         if (err) throw err
@@ -91,15 +90,15 @@ MongoClient.connect('mongodb://127.0.0.1:27017/lab7', function(err, db) {
         "place"
       ];
       // Converts json to csv and xml
-      var reader = fs.createReadStream('leeg8-tweets.json');
-      var writer = fs.createWriteStream('leeg8-tweets.csv');
+      var reader = fs.createReadStream('./public/files/tweets.json');
+      var writer = fs.createWriteStream('./public/files/tweets.csv');
       reader.pipe(jsonexport()).pipe(writer);
-      fs.writeFile("leeg8-tweets.xml",js2xmlparser.parse("tweet", data), function(err){
+      fs.writeFile("./public/files/tweets.xml",js2xmlparser.parse("tweet", data), function(err){
         if(err) console.error(err);
       });
 
       // Reads the json file and inputs the data into the twitCollection
-      fs.readFile('leeg8-tweets.json', 'utf8', function (err, data) {
+      fs.readFile('./public/files/tweets.json', 'utf8', function (err, data) {
         if (err) throw err;
         var json = JSON.parse(data);
 
@@ -176,16 +175,16 @@ app.post('/export', function(req, res){
   var fname = req.body.filename;
 
   if (req.body.type == "CSV") {
-    var file = 'leeg8-tweets.csv';
+    var file = './public/files/tweets.csv';
     res.download(file, fname+'.csv');
   } if (req.body.type == "JSON") {
-    var file = 'leeg8-tweets.json';
+    var file = './public/files/tweets.json';
     res.download(file, fname+'.json');
   } if (req.body.type == "XML") {
-    var file = 'leeg8-tweets.xml';
+    var file = './public/files/tweets.xml';
     res.download(file, fname+'.xml');
   }
 });
 
-server.listen(3000);
-console.log('ready');
+var port_number = server.listen(process.env.PORT || 3000);
+app.listen(port_number);

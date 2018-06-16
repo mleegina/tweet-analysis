@@ -1,16 +1,18 @@
-Gina Lee
-
 To run:
-Start mongo (on separate terminal window)
-- Brew services start mongodb
 
-Navigate to directory (on another terminal window)
-- npm install
-- node bot.js
-- localhost:3000
+1. Set up config.js file
+    - Add api key & secret to config/config.js file
 
-Enter in a subject, the quantity, and then hit load.
-Then you may select your file type, name the file, and download it.
-Finally you can view the tweets and visualize the data.
+2. Start Mongo on separate terminal window
+    - Brew services start mongodb
+
+3. Navigate to directory
+    - npm install
+    - node server.js
+    - Go to localhost:3000 on browser
+
+4. Enter in subject, quantity, and then hit load.
+    - Select your file type, name the file, and download it.
+    - Then you can view the tweets and visualize the data.
 
 

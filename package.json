@@ -2,9 +2,9 @@
   "name": "lab7",
   "version": "1.0.0",
   "description": "Twitter scraping bot",
-  "main": "bot.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node bot.js",
+    "start": "server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
