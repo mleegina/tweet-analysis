@@ -26,7 +26,7 @@ that dataset.
 
 # Screenshots
 
-![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/display.png)
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/main.png)
 
 ![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/display.png)
 
