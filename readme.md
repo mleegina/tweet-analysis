@@ -1,7 +1,6 @@
 # Tweet Analysis
 
-This is an application created on the MEAN stack to scrape tweets and visualize
-that dataset.
+This is an application built on the MEAN stack that pulls tweets using the Twitter API. The tweets are stored in a database, and can be exported as a csv, json, or xml file. The tweets can be displayed and then plotted using graph.js.
 
 # Installation
 
