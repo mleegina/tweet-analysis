@@ -24,5 +24,10 @@ that dataset.
     Then select a filetype, name the file, and download the dataset.
     Finally, display the tweets or visualize the dataset.
 
-# Demo
+# Screenshots
 
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/main.png)
+
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/display.png)
+
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/graph.png)
