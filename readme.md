@@ -31,3 +31,7 @@ that dataset.
 ![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/display.png)
 
 ![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/graph.png)
+
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/graph1.png)
+
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/graph2.png)
