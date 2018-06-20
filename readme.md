@@ -26,8 +26,8 @@ that dataset.
 
 # Screenshots
 
-![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/main.png)
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/display.png)
 
-![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/display.png)
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/display.png)
 
-![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/img/screenshots/graph.png)
+![Screenshot of Page](https://github.com/mleegina/tweet-analysis/blob/master/public/img/screenshots/graph.png)
